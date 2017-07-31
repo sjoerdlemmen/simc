@@ -21,7 +21,8 @@ RUN git clone https://github.com/simulationcraft/simc \
     && apt-get purge -qy \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && rm -rf /var/lib/{apt,dpkg,cache,log} \
-    && echo "p86sstj6dagb63hyru2pvpdv3nzrfxtn" > /usr/local/bin/simc/apikey.txt create
+    && touch /usr/local/bin/simc/apikey.txt \
+    && echo "p86sstj6dagb63hyru2pvpdv3nzrfxtn" > /usr/local/bin/simc/apikey.txt
 
 VOLUME /profiles
 VOLUME /outputs
