@@ -11,7 +11,7 @@ RUN git clone https://github.com/simulationcraft/simc \
     && make BITS=64 OPENSSL=1 -C engine \
     && mv /simc/engine/simc /usr/local/bin/simc \
     && touch apikey.txt \
-    && echo "p86sstj6dagb63hyru2pvpdv3nzrfxtn" > apikey.txt
+    && echo "p86sstj6dagb63hyru2pvpdv3nzrfxtn" > apikey.txt \
     && cd / \
     && rm -fr /simc \
     && mkdir -p /profiles \
