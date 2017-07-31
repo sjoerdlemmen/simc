@@ -3,14 +3,14 @@ MAINTAINER slemmen@gmail.com
 
 # Install dependencies
 RUN apt-get update \
-    && apt-get install -qy git libssl-dev gcc make g++ 
+    && apt-get install -qy git libssl-dev gcc make g++ build-essential
 
 # Build simc
 RUN git clone https://github.com/simulationcraft/simc \
     && cd simc \
-    && make BITS=64 OPENSSL=1 -C engine \
+    && make BITS=64 OPENSSL=1 optimized -C engine \
     && mv /simc/engine/simc /usr/local/bin/simc \
-    && echo "p86sstj6dagb63hyru2pvpdv3nzrfxtn" > apikey.txt \
+    && echo "d2jpcd63smepce6wzupkdhecbnffvdmg" > $HOME/.simc_apikey \
     && cd / \
     && rm -fr /simc \
     && mkdir -p /profiles \
